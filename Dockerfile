@@ -10,7 +10,8 @@ FROM node:18-alpine AS final
 WORKDIR /app
 
 COPY --from=builder ./app/build ./build
-COPY package*.json .
+COPY package.json .
+COPY package.lock.json .
 
 # If you are building your code for production
 RUN npm ci --omit=dev
