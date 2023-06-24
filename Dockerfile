@@ -11,7 +11,7 @@ WORKDIR /app
 
 COPY --from=builder ./app/build ./build
 COPY package.json .
-COPY package.lock.json .
+COPY package-lock.json .
 
 # If you are building your code for production
 RUN npm ci --omit=dev
